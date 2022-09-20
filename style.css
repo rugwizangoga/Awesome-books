@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 60%;
+  margin: auto;
+}
+
+form {
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+button {
+  width: fit-content;
+  padding: 10px 45px;
+  font-size: 17px;
+  font-weight: 700;
+  margin: auto;
+}
+
+.field {
+  height: 40px;
+}

@@ -44,7 +44,6 @@ const fdata = {
   title: "",
   author: "",
 };
-// const stringfiedbooks = [];
 
 add.addEventListener("click", () => {
   count += 1;

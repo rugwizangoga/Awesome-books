@@ -2,7 +2,7 @@
 
 # Awesome books
 
-Awesome-books project is a basic website that allows users to add/remove books from a list. It showcases the usage of JavaScript objects and arrays to dynamically modify the DOM and add basic events.. 
+Awesome-books project is a basic website that allows users to add/remove books from a list. It showcases the use of JavaScript objects and arrays to dynamically modify the DOM and add basic events.. 
 
 
 ## Built With
@@ -39,6 +39,8 @@ Eze Joshua
 
 - GitHub: [@githubhandle](https://github.com/Allenkeys)
 
+
+
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/)
@@ -48,4 +50,4 @@ Feel free to check the [issues page](../../issues/)
 Give a ⭐️ if you like this project
 ## 📝 License
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.

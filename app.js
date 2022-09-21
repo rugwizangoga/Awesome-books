@@ -2,6 +2,13 @@ const books = document.getElementById('books');
 const add = document.getElementById('btn');
 let storedbooks = [];
 let count = 0;
+
+const fdata = {
+  id: count.toString(),
+  title: '',
+  author: '',
+};
+
 function printbook() {
   const bookdata = JSON.parse(window.localStorage.getItem('books'));
   storedbooks = bookdata;
@@ -34,22 +41,22 @@ function printbook() {
   });
 }
 
+function Addbook(title,author) {
+  count += 1;
+  fdata.id = count.toString();
+  fdata.title= title;
+  fdata.author= author;
+  storedbooks.push(fdata);
+  window.localStorage.setItem('books', JSON.stringify(storedbooks));
+}
+
 if (localStorage.getItem('books')) {
   printbook();
 }
 
-const fdata = {
-  id: count.toString(),
-  title: '',
-  author: '',
-};
-
 add.addEventListener('click', () => {
-  count += 1;
-  fdata.id = count.toString();
-  fdata.title = document.forms[0].elements[0].value;
-  fdata.author = document.forms[0].elements[1].value;
-  storedbooks.push(fdata);
-  window.localStorage.setItem('books', JSON.stringify(storedbooks));
+  const booktitle = document.forms[0].elements[0].value;
+  const bookauthor = document.forms[0].elements[1].value;
+  Addbook(booktitle, bookauthor);
   printbook();
 });

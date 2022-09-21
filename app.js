@@ -41,11 +41,11 @@ function printbook() {
   });
 }
 
-function Addbook(title,author) {
+function Addbook(title, author) {
   count += 1;
   fdata.id = count.toString();
-  fdata.title= title;
-  fdata.author= author;
+  fdata.title = title;
+  fdata.author = author;
   storedbooks.push(fdata);
   window.localStorage.setItem('books', JSON.stringify(storedbooks));
 }

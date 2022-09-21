@@ -1,13 +1,13 @@
-const books = document.getElementById("books");
-const add = document.getElementById("btn");
+const books = document.getElementById('books');
+const add = document.getElementById('btn');
 let storedbooks = [];
 let count = 0;
 function printbook() {
-  const bookdata = JSON.parse(window.localStorage.getItem("books"));
+  const bookdata = JSON.parse(window.localStorage.getItem('books'));
   storedbooks = bookdata;
   books.replaceChildren();
   storedbooks.forEach((book) => {
-    const newdiv = document.createElement("div");
+    const newdiv = document.createElement('div');
     newdiv.innerHTML = `
        <div class="book">
        <p id="title">
@@ -20,37 +20,36 @@ function printbook() {
        </div>
        `;
     books.append(newdiv);
-    count = parseInt(book.id);
+    count = parseInt(book.id, 10);
   });
-  const remove = document.querySelectorAll(".remove");
+  const remove = document.querySelectorAll('.remove');
   remove.forEach((rem) => {
-    rem.addEventListener("click", (rem) => {
+    rem.addEventListener('click', (rem) => {
       const { id } = rem.target;
-      ids = id;
-      const btns = document.getElementById(ids);
+      const btns = document.getElementById(id);
       btns.parentElement.remove();
-      storedbooks = storedbooks.filter((book) => book.id !== ids);
-      window.localStorage.setItem("books", JSON.stringify(storedbooks));
+      storedbooks = storedbooks.filter((book) => book.id !== id);
+      window.localStorage.setItem('books', JSON.stringify(storedbooks));
     });
   });
 }
 
-if (localStorage.getItem("books")) {
+if (localStorage.getItem('books')) {
   printbook();
 }
 
 const fdata = {
   id: count.toString(),
-  title: "",
-  author: "",
+  title: '',
+  author: '',
 };
 
-add.addEventListener("click", () => {
+add.addEventListener('click', () => {
   count += 1;
   fdata.id = count.toString();
   fdata.title = document.forms[0].elements[0].value;
   fdata.author = document.forms[0].elements[1].value;
   storedbooks.push(fdata);
-  window.localStorage.setItem("books", JSON.stringify(storedbooks));
+  window.localStorage.setItem('books', JSON.stringify(storedbooks));
   printbook();
 });

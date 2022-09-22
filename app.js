@@ -1,36 +1,25 @@
-class Fdata  {
-  constructor(id, title, author){
-  this.id = id.toString(),
-  this.title = title,
-  this.author = author
-}
-};
 
 class Books {
-  storedbooks = [];
-  count = 0;
-  constructor(book){
-    this.book= book;
-  }
 
   printbook() {
     const books = document.getElementById('books');
     const bookdata = JSON.parse(window.localStorage.getItem('books'));
     this.storedbooks = bookdata;
     books.replaceChildren();
+    let num =0;
     this.storedbooks.forEach((book) => {
       const newdiv = document.createElement('div');
+      num+=1;
       newdiv.innerHTML = `
-         <div class="book">
-         <p id="title">
-          ${book.title}
-          </p>
-         <p id="author">
-         ${book.author}
-          </p>
-         <button type="button" class="remove" id="${book.id}">Remove</button>
-         </div>
+      <p>
+          ${book.title} by ${book.author}
+      </p>
+      <button type="button" class="remove" id="${book.id}">Remove</button>
          `;
+      newdiv.className= 'book';
+      if (num%2===0){
+        newdiv.classList.add('two');
+      }
       books.append(newdiv);
       this.count = parseInt(book.id, 10);
     });
@@ -44,13 +33,6 @@ class Books {
         window.localStorage.setItem('books', JSON.stringify(this.storedbooks));
       });
     });
-  }
-
-  Addbook(title, author) {
-    this.count += 1;
-    this.book = new Fdata(this.count,title,author);
-    this.storedbooks.push(this.book);
-    window.localStorage.setItem('books', JSON.stringify(this.storedbooks));
   }
   
 }

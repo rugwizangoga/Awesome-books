@@ -33,13 +33,11 @@ IRADUKUNDA Pacific Rugwizangoga
 - GitHub: [@githubhandle](https://github.com/rugwizangoga)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/iradukunda-pacific-rugwizangoga)
 
-## 🤝 Contributions
-
 Eze Joshua
 
 - GitHub: [@githubhandle](https://github.com/Allenkeys)
 
-
+## 🤝 Contributions
 
 Contributions, issues, and feature requests are welcome!
 

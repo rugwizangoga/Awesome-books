@@ -53,7 +53,15 @@ a:hover {
   color: black;
 }
 
-
+#now.active {
+  color: #075bf8;
+}
+#go.active {
+  color: #075bf8;
+}
+#then.active {
+  color: #075bf8;
+}
 
 #read.active {
   display: none;

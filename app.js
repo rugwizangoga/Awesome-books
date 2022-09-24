@@ -1,4 +1,44 @@
 /* eslint-disable max-classes-per-file */
+
+const addnew = document.getElementById('addnew');
+const read = document.getElementById('read');
+const contact = document.getElementById('contact');
+const now = document.getElementById('now');
+const go = document.getElementById('go');
+const then = document.getElementById('then');
+const navitem = document.querySelectorAll('.navitem');
+
+addnew.classList.add('active');
+contact.classList.add('active');
+now.classList.add('active');
+
+navitem.forEach((item) => {
+  item.addEventListener('click', (nav) => {
+    const { id } = nav.target;
+    if (id === 'go') {
+      addnew.classList.remove('active');
+      read.classList.add('active');
+      contact.classList.add('active');
+      go.classList.add('active');
+      now.classList.remove('active');
+      then.classList.remove('active');
+    } else if (id === 'then') {
+      contact.classList.remove('active');
+      addnew.classList.add('active');
+      read.classList.add('active');
+      go.classList.remove('active');
+      now.classList.remove('active');
+      then.classList.add('active');
+    } else {
+      read.classList.remove('active');
+      addnew.classList.add('active');
+      contact.classList.add('active');
+      go.classList.remove('active');
+      now.classList.add('active');
+      then.classList.remove('active');
+    }
+  });
+});
 class Fdata {
   constructor(id, title, author) {
     this.id = id.toString();
@@ -53,6 +93,7 @@ class Books {
     this.count += 1;
     this.book = new Fdata(this.count, title, author);
     this.storedbooks.push(this.book);
+    document.forms[0].reset();
     window.localStorage.setItem('books', JSON.stringify(this.storedbooks));
   }
 }

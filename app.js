@@ -1,4 +1,18 @@
 /* eslint-disable max-classes-per-file */
+
+const addnew = document.getElementById('addnew');
+const read = document.getElementById('read');
+const contact = document.getElementById('contact');
+const now = document.getElementById('now');
+const go = document.getElementById('go');
+const then = document.getElementById('then');
+const navitem = document.querySelectorAll('.navitem');
+
+addnew.classList.add('active');
+contact.classList.add('active');
+now.classList.add('active');
+
+
 class Fdata {
   constructor(id, title, author) {
     this.id = id.toString();
@@ -53,6 +67,7 @@ class Books {
     this.count += 1;
     this.book = new Fdata(this.count, title, author);
     this.storedbooks.push(this.book);
+    document.forms[0].reset();
     window.localStorage.setItem('books', JSON.stringify(this.storedbooks));
   }
 }

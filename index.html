@@ -9,20 +9,63 @@
 </head>
 <body>
     <main>
-        <h1>Awesome books</h1>
-        <section id="books">
+        <header>
+            <nav>
+                <a id="logo" href="./index.html">Awesome Books</a>
+                <ul class="navul">
+                    <li><a id="now" class="navitem" href="#">List</a></li>
+                    <li><a id="go" class="navitem" href="#">Add new</a></li>
+                    <li><a id="then" class="navitem" href="#">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+       
+        
+        <section id="read" class="start" >
+        <h1>All awesome books</h1>
+        <div id="books">
+        </div>
         </section>
-        <hr>
-        <h2>Add a new book</h2>
-        <section class="add">
+
+
+
+
+        <section id="addnew" class="add">
+            <h1>Add a new book</h1>
             <form>
                 <input type="text" class="field" placeholder="Title">
                 <input type="text" class="field" placeholder="Author">
                 <button type="button" id="btn">Add</button>
-            </form>
-            
+            </form> 
         </section>
-    </main>
+
+
+
+
+        <section id="contact" class="end">
+            <h1>Contact information</h1>
+            <div class="details">
+                <p>
+                    Do you have any question or you want to say 'hello'? <br>
+                    You can reach out to us.
+                </p>
+                <ul>
+                    <li>Our Email: pacific.r.iradukunda@gmail.com</li>
+                    <li>Our Phone : +250784192238</li>
+                    <li>Our address: 	KN 115 St, Kigali, Rwanda</li>
+                </ul>
+            </div>
+        </section>
+    
+
+
+    <footer>
+        <div class="right">
+            Copyright
+        </div>
+    </footer>
+</main>
     <script src="./app.js"></script>
 </body>
 </html>
